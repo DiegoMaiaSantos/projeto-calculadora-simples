@@ -60,6 +60,7 @@
     font-size: 29px; 
     text-align: right;   
     color: #000;
+    overflow: hidden;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }

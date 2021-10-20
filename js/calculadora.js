@@ -21,3 +21,7 @@ function calcular() {
         document.getElementById('resultado').innerHTML = '0';
     }
 }
+
+function tofixed() {
+    document.getElementById('resultado').innerHTML = resultado.tofixed(2);
+}
