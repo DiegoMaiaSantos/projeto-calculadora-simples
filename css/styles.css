@@ -1,66 +1,76 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-* h2 {
-    padding-bottom: 4px;
-}
-
-.fundo {
-    background-image: linear-gradient(45deg, rgb(238, 32, 145), rgb(28, 140, 173) , rgb(150, 24, 235));
-    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+  }
+  
+  .fundo {
+    background-image: linear-gradient(45deg, rgb(238, 32, 145), rgb(28, 140, 173), rgb(150, 24, 235));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;   
-    text-align: center; 
-}
-
-.calculadora {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.753);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
+  }
+  
+  .calculadora {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 20px;
     border-radius: 10px;
-    padding: 13px;
-}
-
-* button {
-    width: 50px;
-    height: 50px;
-    margin: 0.5px;
+    text-align: center;
+  }
+  
+  .calculadora h2 {
+    margin-bottom: 10px;
+  }
+  
+  #resultado {
+    background-color: #fff;
+    color: #000;
     font-size: 25px;
-    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 210px;
+    height: 35px;
+    text-align: right;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 52px);
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .teclado button {
+    height: 50px;
+    font-size: 20px;
     background-color: rgb(36, 117, 128);
     border: none;
     color: #fff;
-}
-
-* button:hover {
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .teclado button:hover {
     background-color: rgb(21, 169, 196);
-}
-
-.bott1 {
-    height: 103px;
-    border-bottom-right-radius: 5px;
-}
-
-.bott2 {
-    width: 103px;
-    border-bottom-left-radius: 5px;
-}
-
-#resultado {
-    background: #fff;
-    width: 206px;
-    height: 35px;
-    margin: 3px;
-    padding-top: 5px;
-    padding-right: 2px;
-    font-size: 25px; 
-    text-align: right;   
-    color: #000;
-    overflow: hidden;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
+  }
+  
+  .bott1 {
+    grid-row: span 2;
+    height: 106px;
+  }
+  
+  .bott2 {
+    grid-column: span 2;
+    width: 108px;
+  }
+  
