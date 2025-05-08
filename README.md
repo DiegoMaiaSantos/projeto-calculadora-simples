@@ -45,5 +45,4 @@ Este projeto foi criado com o objetivo de:
 
 ## 🧠 Autor
 
-Feito com carinho por [Diego Maia Santos](https://github.com/DiegoMaiaSantos)
-[Acesse meu LinkedIn](https://www.linkedin.com/in/diego-maia-santos-21615b208)
+Feito com carinho por [Diego Maia Santos](https://github.com/DiegoMaiaSantos) | [Acesse meu LinkedIn](https://www.linkedin.com/in/diego-maia-santos-21615b208)
