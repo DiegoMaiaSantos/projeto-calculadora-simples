@@ -1,27 +1,46 @@
-function insert(num1) {
-    let num2 = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = num2 + num1;
-}
+const resultado = document.getElementById('resultado');
+const botoes = document.querySelectorAll('.teclado button');
 
-function clean() {
-    document.getElementById('resultado').innerHTML = '';
-}
+let expressao = '';
 
-function back() {
-    let resultado = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
+botoes.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const valor = btn.getAttribute('data-value');
+
+    switch (valor) {
+      case 'C':
+        expressao = '';
+        atualizar();
+        break;
+      case '←':
+        expressao = expressao.slice(0, -1);
+        atualizar();
+        break;
+      case '=':
+        calcular();
+        break;
+      default:
+        expressao += valor;
+        atualizar();
+        break;
+    }
+  });
+});
+
+function atualizar() {
+  resultado.innerText = expressao || '0';
 }
 
 function calcular() {
-    let resultado = document.getElementById('resultado').innerHTML;
-    if (resultado) {
-        document.getElementById('resultado').innerHTML = eval(resultado);
+  try {
+    if (/^[0-9.+\-*/() ]+$/.test(expressao)) {
+      const resultadoCalc = new Function(`return ${expressao}`)(); 
+      expressao = resultadoCalc.toString();
+    } else {
+      expressao = 'Erro';
     }
-    else {
-        document.getElementById('resultado').innerHTML = '0';
-    }
-}
-
-function tofixed() {
-    document.getElementById('resultado').innerHTML = resultado.tofixed(2);
+  } catch {
+    expressao = 'Erro';
+  }
+  atualizar();
 }
